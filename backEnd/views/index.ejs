@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('partials/head.ejs') %>
+    <link rel="stylesheet" href="\css\home.css" />
+  </head>
+
+  <body>
+    <%- include('partials/header.ejs') %>
+    <main>
+      <section class="slider">
+        <div class="slide">
+          <img src="/images/SLIDER-1.jpg" alt="Photo 1" />
+          <div class="comprar">
+            <a href="/products/22">
+              <p>Comprar</p>
+            </a>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="/images/SLIDER-2.jpg" alt="Photo 2" />
+          <div class="comprar">
+            <a href="/products/22">
+              <p>Comprar</p>
+            </a>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="/images/SLIDER-3.jpg" alt="Photo 3" />
+          <div class="comprar">
+            <a href="/products/22">
+              <p>Comprar</p>
+            </a>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="/images/SLIDER-4.jpg" alt="Photo 4" />
+          <div class="comprar">
+            <a href="/products/22">
+              <p>Comprar</p>
+            </a>
+          </div>
+        </div>
+        <!-- <button class="slider-btn slider-btn--left">&larr;</button>
+        <button class="slider-btn slider-btn--right">&rarr;</button> -->
+        <ion-icon
+          name="chevron-back-circle"
+          class="slider-btn slider-btn--left"
+        ></ion-icon>
+        <ion-icon
+          name="chevron-forward-circle"
+          class="slider-btn slider-btn--right"
+        ></ion-icon>
+        <div class="dots"></div>
+      </section>
+
+      <section class="seccion-productos">
+        <div class="container">
+          <p class="lo-mejor">Lo mejor de la temporada</p>
+          <h2 class="heading-secundario">Productos Destacados</h2>
+        </div>
+        <div class="container productos">
+          <article class="producto en-oferta">
+            <img
+              class="producto-img"
+              src="\images\zapatillas.jpg"
+              alt="Zapatillas"
+            />
+            <div class="detalle-productos">
+              <div class="producto-tags">
+                <span class="tag tag--general">Calzado</span>
+              </div>
+              <p class="producto-titulo">Adidas Z32</p>
+              <div class="precio-compra">
+                <div class="precio">
+                  <p>$30</p>
+                </div>
+                <div class="compra">
+                  <a href="/products/16">
+                    <p>Comprar</p>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="producto">
+            <img
+              class="producto-img"
+              src="\images\pelotadefutbol.jpg"
+              alt="Pelota de futbol"
+            />
+            <div class="detalle-productos">
+              <div class="producto-tags">
+                <span class="tag tag--futbol">Fútbol</span>
+                <span class="tag tag--pelotas">Pelotas</span>
+              </div>
+              <p class="producto-titulo">Pelota Champions</p>
+              <div class="precio-compra">
+                <div class="precio">
+                  <p>$25</p>
+                </div>
+                <div class="compra">
+                  <a href="/products/17">
+                    <p>Comprar</p>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="producto">
+            <img class="producto-img" src="\images\esqui2.jpg" alt="Esqui" />
+            <div class="detalle-productos">
+              <div class="producto-tags">
+                <span class="tag tag--esqui">Esqui</span>
+                <span class="tag tag--accesorios">Accesorios</span>
+              </div>
+              <p class="producto-titulo">Esquis</p>
+              <div class="precio-compra">
+                <div class="precio">
+                  <p>$70</p>
+                </div>
+                <div class="compra">
+                  <a href="/products/18">
+                    <p>Comprar</p>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="producto en-oferta">
+            <img
+              class="producto-img"
+              src="\images\pelotadetenis.jpg"
+              alt="Pelota de tenis"
+            />
+            <div class="detalle-productos">
+              <div class="producto-tags">
+                <span class="tag tag--tenis">Tenis</span>
+                <span class="tag tag--pelotas">Pelotas</span>
+              </div>
+              <p class="producto-titulo">Pelota de Tenis</p>
+              <div class="precio-compra">
+                <div class="precio">
+                  <p>$10</p>
+                </div>
+                <div class="compra">
+                  <a href="/products/19">
+                    <p>Comprar</p>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+    <%- include('partials/footer.ejs') %>
+    <script src="/js/home.js"></script>
+  </body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head.ejs') %>
+    <link rel="stylesheet" href="\css\creation-edition.css" />
+    <link rel="stylesheet" href="\css\home.css" />
+    
+  </head>
+
+  <body>
+    <%- include('../partials/header.ejs') %>
+    <main>
+      <center>
+      
+      <div class="form-container">
+
+        
+          <h1 class="profile-title"> Mi perfil </h1>
+      <div class="profile-container">
+        
+    
+          <div class="data-container">
+
+            <div class="article-data ">
+              <h3 class="user-name"><%= user.nombre %> <%= user.apellido %></h3>
+            </div>
+
+            <div>
+              <img
+                src="/images/avatars/<%= user.image %> "
+                width="150px"
+                
+              />
+          </div>
+
+            <div class="profile-label">
+              <label>Nombre</label>
+              <p class= profile-text><%=user.nombre%></p>
+            </div>
+
+            <div class="profile-label">
+              <label>Apellido</label>
+              <p class= profile-text><%= user.apellido %></p>
+            </div>
+
+            <div class="profile-label">
+              <label>Fecha de nacimiento</label>
+              <p class= profile-text><%=user.fechaDeNacimiento%></p>
+            </div>
+
+
+            <div class="profile-label">
+              <label>Género</label>
+              <p class= profile-text><%=user.genero%></p>
+            </div>
+
+
+            <div class="profile-label">
+              <label>Telefono</label>
+              <p class= profile-text><%=user.telefono%></p>
+            </div>
+
+
+            <div class="profile-label">
+              <label>Direccion de correo electrónico</label>
+              <p class= profile-text><%= user.email%></p>
+            </div>
+
+            <div class="profile-label">
+              <label>Categoria favorita</label>
+              <% for (let i = 0; i < categories.length; i++) { %>
+              <% if (categories[i].id == user.category_id) { %> 
+                <p class= profile-text><%= categories[i].name %></p> 
+                <% } %> 
+                <% } %>
+            </div>
+            
+            
+            </div>
+
+            <nav class="bot">
+              <center>
+                
+                <a class="button" href="/users/profileEdition"> Editar perfil</a>
+              
+                  
+        
+        </form>
+
+  </div>
+  </center>
+    </main>
+    
+    <%- include('../partials/footer.ejs') %>
+
+  </body>
+</html>

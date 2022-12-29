@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head.ejs') %>
+    <link rel="stylesheet" href="\css\register.css" />
+  </head>
+
+  <body>
+    <%- include('../partials/header.ejs') %>
+    <main>
+      <div class="register-container">
+        <h2 class="register-titulo">REGISTRARME</h2>
+        <div class="register-navbar">
+          <ul class="register-nav">
+            <li>
+              <a href="/users/login" class="iniciar-sesion"> Iniciar Sesión </a>
+            </li>
+            <li>
+              <a href="/users/register" class="registrarme"> Registrarme </a>
+            </li>
+          </ul>
+        </div>
+        <form
+          action="/users/register"
+          method="post"
+          enctype="multipart/form-data"
+          class="register-form"
+        >
+          <div class="data-container">
+            <div class="datos-personales">
+              <h3>Datos personales</h3>
+
+              <div class="reg-nombreCompleto">
+                <input
+                  type="text"
+                  name="nombre"
+                  class="inputNombre"
+                  placeholder="Nombre"
+                  value="<%= locals.old ? old.nombre : null %>"
+                  required
+                />
+                <% if(locals.errors && locals.errors.nombre){ %>
+                <p class="msg-error"><%= errors.nombre.msg %></p>
+                <% } %>
+              </div>
+              <div class="reg-apellido">
+                <input
+                  type="text"
+                  name="apellido"
+                  class="inputApellido"
+                  placeholder="Apellido"
+                  value="<%= locals.old ? old.apellido : null %>"
+                  required
+                />
+                <% if(locals.errors && locals.errors.apellido){ %>
+                <p class="msg-error"><%= errors.apellido.msg %></p>
+                <% } %>
+              </div>
+              <div class="form-birthday">
+                <p>Fecha de Nacimiento</p>
+                <input
+                  type="date"
+                  name="fechaDeNacimiento"
+                  class="inputFecha"
+                  id="fechaNac"
+                  value="<%= locals.old ? old.fechaDeNacimiento : null %>"
+                />
+                <% if(locals.errors && locals.errors.fechaDeNacimiento){ %>
+                <p class="msg-error"><%= errors.fechaDeNacimiento.msg %></p>
+                <% } %>
+              </div>
+              <div class="reg-genero">
+                <p>Género</p>
+                <select
+                  type="text"
+                  class="inputGenero"
+                  id="genero"
+                  name="genero"
+                  required
+                >
+                  <option value="">
+                    --Seleccionar--
+                  </option>
+                  <option value="Mujer">
+                    Mujer
+                  </option>
+                  <option value="Hombre">
+                    Hombre
+                  </option>
+                  <option value="Otro">
+                    Otro
+                  </option>
+                  
+                </select>
+                <% if(locals.errors && locals.errors.genero){ %>
+                <p class="msg-error"><%= errors.genero.msg %></p>
+                <% } %>
+              </div>
+              <div class="reg-telefono">
+                <input
+                  type="tel"
+                  name="telefono"
+                  class="inputTelefono"
+                  placeholder="Telefono"
+                  value="<%= locals.old ? old.telefono : null %>"
+                />
+                <% if(locals.errors && locals.errors.telefono){ %>
+                <p class="msg-error"><%= errors.telefono.msg %></p>
+                <% } %>
+              </div>
+            </div>
+
+            <div class="sobre-mi-cuenta">
+              <h3>Sobre mi cuenta</h3>
+
+              <div class="reg-email">
+                <input
+                  type="email"
+                  name="email"
+                  class="inputEmail"
+                  placeholder="Email"
+                  value="<%= locals.old ? old.email : null %>"
+                  required
+                />
+                <% if(locals.errors && locals.errors.email){ %>
+                <p class="msg-error"><%= errors.email.msg %></p>
+                <% } %>
+              </div>
+
+              <div class="reg-contraseña">
+                <input
+                  type="password"
+                  name="password"
+                  class="inputPassword"
+                  placeholder="Contraseña"
+                  value="<%= locals.old ? old.password : null %>"
+                  required
+                />
+                <% if(locals.errors && locals.errors.password){ %>
+                <p class="msg-error"><%= errors.password.msg %></p>
+                <% } %>
+              </div>
+              <div class="file-select">
+                <label class="form-img-avatar" for="files"
+                  ><p>Seleccionar imagen de perfil</p></label
+                >
+                <input
+                  type="file"
+                  name="image"
+                  accept=".jpg,.png,.gif"
+                  class="inputfile"
+                  id="files"
+                  required
+                />
+                <% if(locals.errors && locals.errors.image){ %>
+                <p class="msg-error"><%= errors.image.msg %></p>
+                <% } %>
+              </div>
+
+              <div class="reg-contraseña">
+                <label>Elige tu categoría favorita</label>
+                <select
+                  type="text"
+                  class="inputNombre"
+                  id="category"
+                  name="category"
+                  required
+                >
+                <option value="">--Seleccionar--</option>
+                  <% for (let i = 0; i < categories.length; i++) { %>
+                  <option value="<%= categories[i].id %>">
+                    <%= categories[i].name %>
+                  </option>
+                  <% } %>
+                </select>
+              </div>
+            </div>
+            <div class="register-radio-button">
+              <input type="radio" name="newsletter" value="newsletter" />
+              <label class="newsletter"
+                >Quiero recibir email con ofertas y promociones</label
+              >
+            </div>
+          </div>
+          <div class="button-register">
+            <button type="submit" class="button-register">
+              Crear mi cuenta
+            </button>
+          </div>
+
+          <ul class="errores"></ul>
+        </form>
+      </div>
+    </main>
+    <%- include('../partials/footer.ejs') %>
+    <script src="/validations/registerValidation.js"></script>
+  </body>
+</html>

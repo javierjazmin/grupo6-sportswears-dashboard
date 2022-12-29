@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head.ejs') %>
+    <link rel="stylesheet" href="\css\productDetail.css" />
+    <link rel="stylesheet" href="\css\home.css" />
+  </head>
+
+  <body>
+    <%- include('../partials/header.ejs') %>
+    <main>
+      <section class="section-product-detail">
+        <div class="container main-container">
+          <div class="ruta-container">
+            <ul class="ruta">
+              <li><a href="/" title="Ir a inicio">Inicio</a></li>
+              <li><p><%= product.name %></p></li>
+            </ul>
+          </div>
+          <div class="producto-container">
+            <div class="img">
+              <img
+                class="producto-img-detail"
+                src="/images/<%= product.image %> "
+                alt="Zapatillas"
+              />
+            </div>
+            <div class="producto-detail">
+              <div class="producto-categorias tag tag--general">
+                <h4>Calzado</h4>
+              </div>
+              <div class="producto-titulo"><h2><%= product.name %></h2></div>
+              <div class="producto-envio"><p>Envío gratis</p></div>
+              <div class="producto-precio">
+                <h1>$<%= product.price %></h1>
+                <p class="en-oferta">En oferta!</p>
+              </div>
+              <div class="producto-pago"><p>Hasta 6 cuotas sin interés</p></div>
+              <div class="producto-talle">
+                <h4 class="subheadings">Talle</h4>
+                <input list="talle" class="select-talle" />
+                <datalist id="talle">
+                  <option value="US 8"></option>
+                  <option value="US 8.5"></option>
+                  <option value="US 9"></option>
+                  <option value="US 10"></option>
+                  <option value="US 11"></option>
+                  <option value="US 10.5"></option>
+                </datalist>
+              </div>
+              <div class="producto-color">
+                <h4 class="subheadings">Color</h4>
+                <div class="colores">
+                  <ul>
+                    <li><button class="color color--blanco"></button></li>
+                    <li><button class="color color--negro"></button></li>
+                    <li><button class="color color--rojo"></button></li>
+                    <li><button class="color color--azul"></button></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="producto-cantidad">
+                <h4 class="subheadings">Cantidad</h4>
+                <input list="cantidad" class="select-cant" />
+                <datalist id="cantidad">
+                  <option value="1"></option>
+                  <option value="2"></option>
+                  <option value="3"></option>
+                </datalist>
+              </div>
+              <div class="producto-talle"><h4></h4></div>
+              <div class="producto-agregarAlCarrito">
+                <button>
+                  <ion-icon name="cart"></ion-icon>
+                  <p>Agregar al Carrito</p>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <%- include('../partials/footer.ejs') %>
+  </body>
+</html>

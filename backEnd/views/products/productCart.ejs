@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head.ejs') %>
+    <link rel="stylesheet" href="\css\productCart.css" />
+    <link rel="stylesheet" href="\css\home.css" />
+  </head>
+
+  <body>
+    <%- include('../partials/header.ejs') %>
+    <main>
+      <section class="top-container">
+        <div class="top-container-left">
+          <h3>Mi Carrito</h3>
+          <a href="/products" class="seguirComprando">Seguir Comprando</a>
+        </div>
+        <div class="top-container-right">
+          <h5>¿Necesitás ayuda? 0800-333-AYUDA</h5>
+        </div>
+      </section>
+      <section class="cart-container">
+        <div class="cart-product-container">
+          <article class="product1-container">
+            <div class="img-producto">
+              <img
+                src="\images\camiseta-adidas-argentina.jpg"
+                class="img-product1"
+                alt="remera adidas"
+              />
+            </div>
+            <div class="detalle-producto">
+              <ul class="descripcion">
+                <li class="nombre-producto">Camiseta Adidas Argentina</li>
+                <li class="numero-producto">N° de producto: 0123456</li>
+                <li class="talle-producto">Talle: XL</li>
+              </ul>
+              <a href="#" class="editarProducto">Editar producto</a>
+            </div>
+            <div class="cantidad">
+              <p>Cantidad</p>
+              <input list="cantidad" class="select-cant" />
+              <datalist id="cantidad">
+                <option value="1"></option>
+                <option value="2"></option>
+                <option value="3"></option>
+              </datalist>
+            </div>
+            <div class="precio">
+              <p>Total</p>
+              <h4 class="sumaTotal">$89</h4>
+              <button class="button-eliminar">
+                <ion-icon name="trash-outline"></ion-icon>
+              </button>
+            </div>
+          </article>
+
+          <article class="product2-container">
+            <div class="img-producto">
+              <img
+                src="\images\zapatillas-asics-running.jpg"
+                class="img-product2"
+                alt="zapatilla asics running"
+              />
+            </div>
+            <div class="detalle-producto">
+              <ul class="descripcion">
+                <li class="nombre-producto">Zapatilla Asics Running</li>
+                <li class="numero-producto">N° de producto: 0123457</li>
+                <li class="talle-producto">Talle: 42</li>
+              </ul>
+              <a href="#" class="editarProducto">Editar producto</a>
+            </div>
+            <div class="cantidad">
+              <p>Cantidad</p>
+              <input list="cantidad" class="select-cant" />
+              <datalist id="cantidad">
+                <option value="1"></option>
+                <option value="2"></option>
+                <option value="3"></option>
+              </datalist>
+            </div>
+            <div class="precio">
+              <p>Total</p>
+              <h4 class="sumaTotal">$75</h4>
+              <button class="button-eliminar">
+                <ion-icon name="trash-outline"></ion-icon>
+              </button>
+            </div>
+          </article>
+        </div>
+        <article class="envio-costoTotal-container">
+          <div class="envio-costoTotal">
+            <h4>Calculá el costo del envio</h4>
+            <div class="costoEnvio">
+              <input
+                type="number"
+                class="post-code"
+                placeholder="Codigo Postal"
+              />
+              <button type="submit" class="button-costo-envio">Calcular</button>
+            </div>
+          </div>
+          <div class="costo-producto-total">
+            <div class="costo-producto">
+              <ul class="subtotal-box">
+                <li>Subtotal............................$164</li>
+                <li>Costo del Envio...................$5</li>
+                <li>
+                  <strong>Total..............................$169</strong>
+                </li>
+              </ul>
+              <div class="button-comprar">
+                <button type="submit" class="button-comprar">Comprar</button>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+    <%- include('../partials/footer.ejs') %>
+  </body>
+</html>
