@@ -1,11 +1,11 @@
 import React from "react";
 import image from "../assets/images/logo.png";
-import ChartUsersRow from "./ChartUsersRow";
+import UsersRow from "./UsersRow";
 import MainContent from "./MainContent";
 import ProductsInDb from "./ProductsInDb";
 import CategoriesInDb from "./CategoriesInDb";
 import { Link, Routes, Route } from "react-router-dom";
-// import NotFound from "./NotFound";
+import NotFound from "./NotFound";
 import SearchProducts from "./SearchProducts";
 
 function SideBar() {
@@ -84,9 +84,9 @@ function SideBar() {
         <Route path="/" element={<MainContent />}></Route>
         <Route path="/products" element={<ProductsInDb />}></Route>
         <Route path="/categories" element={<CategoriesInDb />}></Route>
-        <Route path="/users" element={<ChartUsersRow />}></Route>
+        <Route path="/users" element={<UsersRow />}></Route>
         <Route path="/searchProducts" element={<SearchProducts />}></Route>
-        {/* <Route path="*" element={<NotFound />}></Route> */}
+        <Route path="*" element={<NotFound />}></Route> 
       </Routes>
     </React.Fragment>
   );

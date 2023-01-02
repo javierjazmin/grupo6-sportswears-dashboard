@@ -42,25 +42,11 @@ function UsersRow() {
                 <th>Nombre</th>
                 <th>Apellido</th>
                 <th>Telefono</th>
+                <th>Categoria</th>
                 <th>Género</th>
               </tr>
             </thead>
-            <tmidlle>
-              <tr>
-                <th>Nombre</th>
-                <th>Apellido</th>
-                <th>Telefono</th>
-                <th>Género</th>
-              </tr>
-            </tmidlle>
-            <tfoot>
-              <tr>
-                <th>Nombre</th>
-                <th>Apellido</th>
-                <th>Telefono</th>
-                <th>Género</th>
-              </tr>
-            </tfoot>
+            
             <tbody>
               {tableRowsData.map((row, i) => {
                 return <ChartUsersRow {...row} key={i} />;
