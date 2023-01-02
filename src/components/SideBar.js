@@ -2,11 +2,10 @@ import React from "react";
 import image from "../assets/images/logo.png";
 import ChartUsersRow from "./ChartUsersRow";
 import ProductsInDb from "./ProductsInDb";
-import CategoriesInDb from "./CategoriesInDb"
+import CategoriesInDb from "./CategoriesInDb";
 import { Link, Routes, Route } from "react-router-dom";
-import NotFound from "./NotFound";
+// import NotFound from "./NotFound";
 import SearchProducts from "./SearchProducts";
-import Header from "./Header";
 
 function SideBar() {
   return (
@@ -67,29 +66,26 @@ function SideBar() {
           </a>
         </li>
 
-         {/*<!-- Nav Item - SearchMovies -->*/}
-         <li className="nav-item">
+        {/*<!-- Nav Item - SearchMovies -->*/}
+        <li className="nav-item">
           <a className="nav-link" href="/searchProducts">
             <i className="fas fa-fw fa-table"></i>
             <span>Search Products</span>
           </a>
         </li>
 
-
         {/*<!-- Divider -->*/}
         <hr className="sidebar-divider d-none d-md-block" />
       </ul>
       {/*<!-- End of Sidebar -->*/}
       <Routes>
-          <Route path="/" element={<Header/>}></Route> 
-          <Route path="/products" element={<ProductsInDb/>}></Route> 
-          <Route path="/categories" element={<CategoriesInDb/>}></Route> 
-          <Route path="/users" element={<ChartUsersRow/>}></Route> 
-          <Route path="/searchProducts" element={<SearchProducts/>}></Route> 
-          <Route path="*" element={<NotFound/>}></Route> 
-        </Routes>
+        <Route path="/products" element={<ProductsInDb />}></Route>
+        <Route path="/categories" element={<CategoriesInDb />}></Route>
+        <Route path="/users" element={<ChartUsersRow />}></Route>
+        <Route path="/searchProducts" element={<SearchProducts />}></Route>
+        {/* <Route path="*" element={<NotFound />}></Route> */}
+      </Routes>
     </React.Fragment>
-   
   );
 }
 export default SideBar;
