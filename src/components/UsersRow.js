@@ -46,7 +46,7 @@ function UsersRow() {
                 <th>Género</th>
               </tr>
             </thead>
-            
+
             <tbody>
               {tableRowsData.map((row, i) => {
                 return <ChartUsersRow {...row} key={i} />;
