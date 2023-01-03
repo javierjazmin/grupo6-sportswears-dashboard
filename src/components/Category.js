@@ -9,6 +9,6 @@ function Category(props) {
         </div>
       </div>
     </React.Fragment>
-  );
+  )
 }
 export default Category;

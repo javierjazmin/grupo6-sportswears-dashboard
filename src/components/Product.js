@@ -7,6 +7,12 @@ function Product(props){
                 <div className="card text">
                     <div className="card-body">
                         {props.name}
+                        
+                        {props.brand}
+                        
+                        {props.description}
+                        
+                        {props.year}
                     </div>
                 </div>
             </div>

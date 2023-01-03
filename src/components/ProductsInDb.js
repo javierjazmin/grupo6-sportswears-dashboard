@@ -15,9 +15,9 @@ class ProductsInDb extends Component{
           .then((respuesta) => {
             return respuesta.json();
           })
-          .then((productos) => {
-            console.log(productos)
-            this.setState({ productsList: productos.data });
+          .then((products) => {
+            console.log(products)
+            this.setState({ productsList: products.data });
           })
           .catch((error) => console.log(error));
     }    
@@ -30,14 +30,14 @@ class ProductsInDb extends Component{
                 <div className="col-lg-6 mb-4">
                     <div className="card shadow mb-4">
                         <div className="card-header py-3">
-                            <h6 className="m-0 font-weight-bold text-gray-800">Productos in Data Base</h6>
+                            <h6 className="m-0 font-weight-bold text-gray-800">Products in Data Base</h6>
                         </div>
 
                         <div className="card-body fondoCaja">
                             <div className="row">
                                 {
-                                    this.state.productsList.map((producto, index) => {
-                                        return <Product {...producto} key={index} />
+                                    this.state.productsList.map((product, index) => {
+                                        return <Product {...product} key={index} />
                                     })
                                 }
                             </div>

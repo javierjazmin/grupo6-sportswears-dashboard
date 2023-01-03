@@ -13,11 +13,11 @@ function SearchProducts(){
 
 	useEffect(() => {
 
-		const url = `http://localhost:3000/api/products/`
-
-		fetch(url)
+		
+		fetch("http://localhost:3000/api/products")
         .then( res => res.json())
         .then( data => setProducts(data.Search))
+		
         .catch( error => console.log(error))
 
 	}, [keyword]);
