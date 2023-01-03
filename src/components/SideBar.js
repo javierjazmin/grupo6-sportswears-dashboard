@@ -6,7 +6,7 @@ import ProductsInDb from "./ProductsInDb";
 import CategoriesInDb from "./CategoriesInDb";
 import { Link, Routes, Route } from "react-router-dom";
 import NotFound from "./NotFound";
-import SearchProducts from "./SearchProducts";
+import LastProductInDb from "./LastProductInDb";
 
 function SideBar() {
   return (
@@ -69,9 +69,9 @@ function SideBar() {
 
         {/*<!-- Nav Item - SearchMovies -->*/}
         <li className="nav-item">
-          <Link className="nav-link" to="/searchProducts">
+          <Link className="nav-link" to="/lastProductInDb">
             <i className="fas fa-fw fa-table"></i>
-            <span>Search Products</span>
+            <span>Last Product In Data base</span>
           </Link>
         </li>
 
@@ -85,7 +85,7 @@ function SideBar() {
         <Route path="/products" element={<ProductsInDb />}></Route>
         <Route path="/categories" element={<CategoriesInDb />}></Route>
         <Route path="/users" element={<UsersRow />}></Route>
-        <Route path="/searchProducts" element={<SearchProducts />}></Route>
+        <Route path="/lastProductInDb" element={<LastProductInDb />}></Route>
         <Route path="*" element={<NotFound />}></Route> 
       </Routes>
     </React.Fragment>

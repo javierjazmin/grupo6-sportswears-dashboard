@@ -56,7 +56,7 @@ function ContentTables() {
   let totalCategories = {
     title: " Total Categories",
     color: "success",
-    quantity: categories.data.length,
+    quantity: categories.count,
     icon: "fa-award"
   };
 

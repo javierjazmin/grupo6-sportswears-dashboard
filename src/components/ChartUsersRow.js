@@ -1,24 +1,20 @@
 import React from 'react';
 
 
-function ChartUsersRow(props){
+function ChartUsersRow(props) {
     return (
-                <tr>
-                    <td>{props.nombre}</td>
-                    <td>{props.apellido}</td>
-                    <td>{props.telefono}</td>
-                    <td>
-                        <ul>
-                            {props.Categories.map( (category,i) => 
-                                <li key={`category ${i}`}>{category}</li>
-                            )}
-                        </ul>
-                    </td>
-                    <td>{props.genero}</td>
-                </tr>
-            )
-    }
-    
-        
+        <React.Fragment>
+            <tr>
+                <td>{props.id}</td>
+                <td>{props.nombre}</td>
+                <td>{props.apellido}</td>
+                <td>{props.email}</td>
+
+            </tr>
+        </React.Fragment>
+    )
+}
+
+
 
 export default ChartUsersRow;

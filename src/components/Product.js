@@ -9,10 +9,10 @@ function Product(props){
                         {props.name}
                         
                         {props.brand}
+
+                        <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{ width: "15rem" }} src={props.image_url} alt=""/>
                         
-                        {props.description}
-                        
-                        {props.year}
+                       
                     </div>
                 </div>
             </div>

@@ -1,31 +1,27 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import ChartUsersRow from "./ChartUsersRow";
 
 let tableRowsData = [
   {
-    nombre: "Valentina",
-    apellido: "Adle",
-    telefono: "298383733",
-    Categories: ["Running", "Mujer"],
-    genero: "Mujer",
-  },
-  {
-    nombre: "Joaquin",
-    apellido: "Leklere",
-    telefono: "28837464",
-    Categories: ["Futbol", "Hombre"],
-    genero: "Hombre",
-  },
-  {
-    nombre: "Javier",
-    apellido: "Jazmin",
-    telefono: "113348484",
-    Categories: ["Tennis", "Hombre"],
-    genero: "Hombre",
-  },
-];
-
+    id: "Cargando...",
+    nombre: "Cargando...",
+    apellido: "Cargando...",
+    email: "Cargando...",
+  }
+]
 function UsersRow() {
+
+  let [users, setUsers] = useState(tableRowsData);
+
+  useEffect(() => {
+    fetch("http://localhost:3000/api/users")
+      .then(response => response.json())
+      .then(data => {
+        let array = data.users
+        setUsers(array)
+      })
+
+  }, [])
   return (
     /* <!-- DataTales Example --> */
     <div className="card shadow mb-4">
@@ -39,17 +35,17 @@ function UsersRow() {
           >
             <thead>
               <tr>
+                <th>ID</th>
                 <th>Nombre</th>
                 <th>Apellido</th>
-                <th>Telefono</th>
-                <th>Categoria</th>
-                <th>Género</th>
+                <th>Email</th>
+
               </tr>
             </thead>
 
             <tbody>
-              {tableRowsData.map((row, i) => {
-                return <ChartUsersRow {...row} key={i} />;
+              {users.map((user, i) => {
+                return <ChartUsersRow {...user} key={i} />;
               })}
             </tbody>
           </table>
@@ -58,5 +54,6 @@ function UsersRow() {
     </div>
   );
 }
+
 
 export default UsersRow;
